@@ -1,81 +1,111 @@
-//import * as React from 'react';
-import {View,Text} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
+//importing screens
 import Screenone from './Screens/screenone';
-import Screentwo from './Screens/screentwo';
-import Screenthree from './Screens/screenthree';
-import Screenfour from './Screens/screenfour';
+import Screentwo from './Screens/screenone';
+import Screenthree from './Screens/screenone';
+import Screenfour from './Screens/screenone';
+  
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Screenone} options={{headerShown:false}}/>
+        <Stack.Screen name="Schedule" component={Screentwo} options={{headerShown:false}}/>
+        <Stack.Screen name="Messages" component={Screenthree} options={{headerShown:false}} />
+        <Stack.Screen name="People" component={Screenfour} options={{headerShown:false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 
 
-const homesection = 'Home';
-const schedulesection = 'Schedule';
-const messagesection = 'Messages';
-const peoplesection = 'People';
+// import * as React from 'react';
+// import {View,Text} from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import Ionicons from '@expo/vector-icons/Ionicons';
+// import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-const Tab = createBottomTabNavigator();
+// import Screenone from './Screens/screenone';
+// import Screentwo from './Screens/screentwo';
+// import Screenthree from './Screens/screenthree';
+// import Screenfour from './Screens/screenfour';
 
 
-export default function App(){
-    return(
-        <NavigationContainer>
-            <Tab.Navigator
-               initialRouteName={homesection}
-               screenOptions={({route}) =>({
-                   tabBarIcon:({focused, color, size}) =>{
-                       let iconName;
-                       let iconType;
 
-                       let rn = route.name;
+// const homesection = 'Home';
+// const schedulesection = 'Schedule';
+// const messagesection = 'Messages';
+// const peoplesection = 'People';
 
-                       if (rn === homesection) {
-                        iconName = focused ? 'home' : 'home-outline';
-                        iconType = 'Ionicons';
-                      } else if (rn === schedulesection) {
-                        iconName = focused ? 'calendar' : 'calendar-outline';
-                        iconType = 'Ionicons';
-                      } else if (rn === messagesection) {
-                        iconName = focused ? 'message-processing' : 'message-processing-outline';
-                        iconType = 'MaterialCommunityIcons';
-                      } else if (rn === peoplesection) {
-                        iconName = focused ? 'person' : 'person-outline';
-                        iconType = 'Ionicons';
-                      }
+// const Tab = createBottomTabNavigator();
+
+
+// export default function App(){
+//     return(
+//         <NavigationContainer>
+//             <Tab.Navigator
+//                initialRouteName={homesection}
+//                screenOptions={({route}) =>({
+//                    tabBarIcon:({focused, color, size}) =>{
+//                        let iconName;
+//                        let iconType;
+
+//                        let rn = route.name;
+
+//                        if (rn === homesection) {
+//                         iconName = focused ? 'home' : 'home-outline';
+//                         iconType = 'Ionicons';
+//                       } else if (rn === schedulesection) {
+//                         iconName = focused ? 'calendar' : 'calendar-outline';
+//                         iconType = 'Ionicons';
+//                       } else if (rn === messagesection) {
+//                         iconName = focused ? 'message-processing' : 'message-processing-outline';
+//                         iconType = 'MaterialCommunityIcons';
+//                       } else if (rn === peoplesection) {
+//                         iconName = focused ? 'person' : 'person-outline';
+//                         iconType = 'Ionicons';
+//                       }
                 
 
-                       return (
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+//                        return (
+//                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
 
-                        <>{iconType === 'Ionicons' && <Ionicons name={iconName} size={size} color={color} />}
-                          {iconType === 'MaterialCommunityIcons' && <MaterialCommunityIcons name={iconName} size={size} color={color} />}
-                        </>
-                        {focused && <Text style={{ fontSize: 14, marginLeft: 10 }}>{route.name}</Text>}
-              </View>
+//                         <>{iconType === 'Ionicons' && <Ionicons name={iconName} size={size} color={color} />}
+//                           {iconType === 'MaterialCommunityIcons' && <MaterialCommunityIcons name={iconName} size={size} color={color} />}
+//                         </>
+//                         {focused && <Text style={{ fontSize: 14, marginLeft: 10 }}>{route.name}</Text>}
+//               </View>
 
-                      );
+//                       );
                 
 
-                   },
+//                    },
                    
-               })}
-      >
-                  <Tab.Screen name={homesection} component={Screenone} options={{ headerShown: false }}
-                  />
-                  <Tab.Screen name={schedulesection} component={Screentwo} options={{ headerShown: false }}
-                  />
-                  <Tab.Screen name={messagesection} component={Screenthree} options={{ headerShown: false }}
-                  />
-                  <Tab.Screen name={peoplesection} component={Screenfour} options={{ headerShown: false }}
-                  />
+//                })}
+//       >
+//                   <Tab.Screen name={homesection} component={Screenone} options={{ headerShown: false }}
+//                   />
+//                   <Tab.Screen name={schedulesection} component={Screentwo} options={{ headerShown: false }}
+//                   />
+//                   <Tab.Screen name={messagesection} component={Screenthree} options={{ headerShown: false }}
+//                   />
+//                   <Tab.Screen name={peoplesection} component={Screenfour} options={{ headerShown: false }}
+//                   />
                   
 
 
-            </Tab.Navigator>
-        </NavigationContainer>
+//             </Tab.Navigator>
+//         </NavigationContainer>
     
-    );
-}
+//     );
+// }

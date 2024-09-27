@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Entypo from '@expo/vector-icons/Entypo';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -10,14 +10,15 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const firstimage = require('../Components/pictureone.jpg');
 const secondimage = require('../Components/picturetwo.jpg');
 
  
-export default function Screenone({navigation}) {
+export default function Screenone ({navigation}){
   return (
-   <SafeAreaView className="flex-1 m-4 mt-10 bg-black" onPress={() => navigation.navigate('Home')} >
+   <SafeAreaView className="flex-1 m-4 mt-10 bg-white"  >
       <View className="flex-row space-x-36 " >
         <View>
           <Text className="text-gray-400" >Hello,</Text>
@@ -25,7 +26,7 @@ export default function Screenone({navigation}) {
         </View>
         <View className="bg-or rounded-full justify-center"><AntDesign name="smile-circle" size={44} color="dodgerblue" /></View>
       </View>
-      <View className=" p-4 bg-blue-400 rounded-xl mt-7"> 
+      <View className=" p-4 bg-blue-400 rounded-xl mt-8"> 
         <View className="flex-row justify-center">
          <View className="justify-center"><Image source={firstimage} className="rounded-full w-10 h-10"/></View>
            <View className="pl-2">
@@ -92,6 +93,18 @@ className="pt-4 border-gray-300"/>
           <View><MaterialIcons name="access-time" size={20} color="dodgerblue" /></View>
           <View><Text className="text-blue-400">Open at 17.00</Text></View>
         </View>
+      </View>
+      <View className="-ml-4 -mr-4 mt-10 border border-gray-100 border-b-0"></View>
+      <View className="flex-row space-x-10 justify-center items-center mt-4">
+        <TouchableOpacity >
+        <View className="flex-row justify-center items-center bg-blue-100 rounded-lg w-20 h-10" >
+          <View><Ionicons name="home" size={24} color="dodgerblue" /></View>
+          <View><Text className="text-blue-400"> Home</Text></View>
+        </View>
+        </TouchableOpacity>
+        <View  onPress={() => navigation.navigate('Schedule')}><Ionicons name="calendar-outline" size={24} color="gray" /></View>
+        <View><MaterialCommunityIcons name="message-processing-outline" size={24} color="gray" /></View>
+        <View><Ionicons name="person-outline" size={24} color="gray" /></View>
       </View>
       <StatusBar style="auto" />
    </SafeAreaView>
