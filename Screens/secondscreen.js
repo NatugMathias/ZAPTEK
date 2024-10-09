@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, SafeAreaView } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //importing icons
 import Entypo from '@expo/vector-icons/Entypo';
@@ -30,7 +30,7 @@ export default function Secondscreen() {
       </View>
       <View>
         <View className="flex-row items-center mt-16 space-x-1">
-        <TouchableOpacity onPress={() => navigation.navigate('Thirdscreen')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Screen3')}>
           <View className="bg-orange-500 rounded-lg w-28 h-7 items-center justify-center ml-7"><Text className="text-orange-100">Cappuccino</Text></View>
         </TouchableOpacity>
           <View className="bg-white rounded-lg w-20 h-7 items-center justify-center"><Text>Machiato</Text></View>

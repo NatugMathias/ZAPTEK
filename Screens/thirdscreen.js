@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //importing screens
 import Entypo from '@expo/vector-icons/Entypo';
@@ -13,7 +13,7 @@ export default function Thirdscreen() {
   return (
     <SafeAreaView className="flex-1  bg-white">
       <View className="flex-row mt-8 items-center space-x-24">
-      <TouchableOpacity onPress={() => navigation.navigate('Secondcreen')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Screen2')}>
         <View className="p-4"><Entypo name="chevron-thin-left" size={14} color="black" /></View>
       </TouchableOpacity>  
         <View><Text className="font-bold">Details</Text></View>
@@ -59,7 +59,7 @@ className="pt-1 border-gray-300 m-5"/>
            <View><Text className="text-gray-400 text-xs">Price</Text></View>
            <View><Text className="text-orange-500 font-bold pl-3">$ 4.53</Text></View>
           </View>
-          <TouchableOpacity onPress={() => navigation.navigate('Fourthscreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Screen4')}>
           <View className="justify-center items-center w-44 h-14 bg-orange-400 rounded-xl mt-4"><Text className="text-white font-medium">Buy Now</Text></View>
           </TouchableOpacity>
           </View>

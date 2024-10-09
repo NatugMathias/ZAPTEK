@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function Firstscreen() {
   const navigation = useNavigation();
@@ -16,7 +16,7 @@ export default function Firstscreen() {
         <Text className=" text-gray-400 font-light pt-2">The best grain, the finest roast, the</Text>
         <Text className=" text-gray-400 font-light">powerful flavor.</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Secondscreen')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Screen2')}>
 
          <View className="mt-5 bg-orange-400 w-64 h-14 items-center justify-center rounded-xl">
            <Text className="text-orange-100 font-medium">Get Started</Text>

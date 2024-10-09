@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, SafeAreaView, Image, } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //importing screens
 import Entypo from '@expo/vector-icons/Entypo';
@@ -16,7 +16,7 @@ export default function Fifthscreen() {
   return (
     <SafeAreaView className="flex-1  bg-gray-50">
       <View className="flex-row mt-8 ml-6 items-center space-x-52 ">
-      <TouchableOpacity onPress={() => navigation.navigate('Fourthscreen')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Screen4')}>
         <View className="w-8 h-8 bg-white justify-center items-center rounded-lg"><Entypo name="chevron-thin-left" size={14} color="black" /></View>
       </TouchableOpacity>
         <View className="w-8 h-8 bg-white justify-center items-center rounded-lg "><MaterialCommunityIcons name="crosshairs-gps" size={18} color="black" /></View>

@@ -19,12 +19,12 @@ export default function App() {
   return (
     <SafeAreaView className=" ">
       <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Firstscreen} />
-        <Stack.Screen name="Screen1" component={Secondscreen} />
-        <Stack.Screen name="Screen2" component={Thirdscreen} />
-        <Stack.Screen name="Screen3" component={Fourthscreen} />
-        <Stack.Screen name="Screen4" component={Fifthscreen} />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Firstscreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Screen2" component={Secondscreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Screen3" component={Thirdscreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Screen4" component={Fourthscreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Screen5" component={Fifthscreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
 

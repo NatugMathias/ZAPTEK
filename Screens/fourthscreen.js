@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //importing screens
 import Entypo from '@expo/vector-icons/Entypo';
@@ -15,7 +15,7 @@ export default function Fourthscreen() {
   return (
     <SafeAreaView className="flex-1  bg-white">
       <View className="flex-row mt-8 items-center space-x-24">
-      <TouchableOpacity onPress={() => navigation.navigate('Thirdscreen')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Screen3')}>
         <View className="p-4"><Entypo name="chevron-thin-left" size={14} color="black" /></View>
       </TouchableOpacity>
         <View><Text className="font-bold">Order</Text></View>
@@ -103,7 +103,7 @@ className="pt-1 border-gray-300 m-5"/>
   <View className="w-4 h-4 bg-gray-500 rounded-full justify-center items-center"><MaterialCommunityIcons name="dots-horizontal" size={14} color="white" /></View>
 </View>
 
-<TouchableOpacity onPress={() => navigation.navigate('Fifthscreen')}>
+<TouchableOpacity onPress={() => navigation.navigate('Screen5')}>
 <View className="bg-orange-400 rounded-xl ml-5 mr-5 h-14 justify-center items-center mt-3"><Text className="text-white font-medium ">Order</Text></View>
 </TouchableOpacity> 
 
